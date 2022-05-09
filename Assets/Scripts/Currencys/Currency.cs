@@ -6,7 +6,7 @@ using UnityEngine;
 public class Currency : MonoBehaviour
 {
     public TMPro.TextMeshProUGUI currency;
-    public static int currencyAmount;
+    public static float currencyAmount;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +17,6 @@ public class Currency : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currency.text = "Currency: " + currencyAmount;
+        currency.text = "Currency: " + Mathf.Round(currencyAmount);
     }
 }
