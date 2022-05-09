@@ -11,6 +11,7 @@ public class EvolutionManager : MonoBehaviour
     private void Start()
     {
         this.spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = evolutionStages[evolution_ID].Sprite;
     }
 
     public void Combine()
