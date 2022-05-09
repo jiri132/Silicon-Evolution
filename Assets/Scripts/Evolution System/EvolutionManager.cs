@@ -5,7 +5,17 @@ using UnityEngine;
 public class EvolutionManager : MonoBehaviour
 {
     [SerializeField]private EvolutionStage[] evolutionStages;
-    public int evolution_ID;
+    private SpriteRenderer spriteRenderer;
 
+    public int evolution_ID = 0;
+    private void Start()
+    {
+        this.spriteRenderer = GetComponent<SpriteRenderer>();
+    }
 
+    public void Combine()
+    {
+        spriteRenderer.sprite = evolutionStages[evolution_ID].Sprite;
+        evolution_ID++;
+    }
 }
