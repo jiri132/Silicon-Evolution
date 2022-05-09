@@ -16,7 +16,7 @@ public class EvolutionManager : MonoBehaviour
 
     public void Combine()
     {
-        spriteRenderer.sprite = evolutionStages[evolution_ID].Sprite;
         evolution_ID++;
+        spriteRenderer.sprite = evolutionStages[evolution_ID].Sprite;
     }
 }

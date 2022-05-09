@@ -8,5 +8,6 @@ public class EvolutionStage
     public string Name;
     public CURRENCY_TYPES currencyType;
     public float earningsPerSecond;
+    public int World;
     public Sprite Sprite;
 }

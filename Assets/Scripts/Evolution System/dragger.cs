@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class dragger : MonoBehaviour
 {
-    private EvolutionManager manager, other;
+    [SerializeField]private EvolutionManager manager, other;
     [SerializeField]private bool canCombine;
     // Start is called before the first frame update
     private bool isDragging;
@@ -32,6 +32,7 @@ public class dragger : MonoBehaviour
         {
             manager.Combine();
             Destroy(other.gameObject);
+            canCombine = false;
         }
     }
 
