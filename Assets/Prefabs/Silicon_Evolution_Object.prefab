@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 3483872869052774069}
   - component: {fileID: 3483872869052774026}
   - component: {fileID: 3483872869052774027}
+  - component: {fileID: -6774893568432664858}
+  - component: {fileID: -3532397405725255131}
+  - component: {fileID: -3171381129038201883}
   m_Layer: 0
   m_Name: Silicon_Evolution_Object
   m_TagString: Untagged
@@ -101,13 +104,93 @@ MonoBehaviour:
   - Name: Silicon
     currencyType: 0
     earningsPerSecond: 1
+    World: 0
     Sprite: {fileID: 1567843307, guid: cfa14f7d1a30f9048b1d489252bfd014, type: 3}
   - Name: Silicon Wafer
     currencyType: 0
     earningsPerSecond: 2.5
+    World: 0
     Sprite: {fileID: 825387238, guid: cfa14f7d1a30f9048b1d489252bfd014, type: 3}
   - Name: Transistor
     currencyType: 0
     earningsPerSecond: 3.25
+    World: 0
     Sprite: {fileID: 1465479157, guid: cfa14f7d1a30f9048b1d489252bfd014, type: 3}
+  - Name: Bundle of Transistors
+    currencyType: 0
+    earningsPerSecond: 5
+    World: 0
+    Sprite: {fileID: 1964922932, guid: cfa14f7d1a30f9048b1d489252bfd014, type: 3}
+  - Name: A BUNCH of transistors
+    currencyType: 0
+    earningsPerSecond: 9
+    World: 0
+    Sprite: {fileID: 1407017471, guid: cfa14f7d1a30f9048b1d489252bfd014, type: 3}
+  - Name: Logic Gates
+    currencyType: 0
+    earningsPerSecond: 15.5
+    World: 0
+    Sprite: {fileID: -227418512, guid: cfa14f7d1a30f9048b1d489252bfd014, type: 3}
   evolution_ID: 0
+--- !u!114 &-6774893568432664858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3483872869052774024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae0db801065351a4295dfa198ee49fab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 0}
+  other: {fileID: 0}
+  canCombine: 0
+--- !u!61 &-3532397405725255131
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3483872869052774024}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.45, y: 0.45}
+  m_EdgeRadius: 0
+--- !u!50 &-3171381129038201883
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3483872869052774024}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
