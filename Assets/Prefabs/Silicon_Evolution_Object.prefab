@@ -131,6 +131,21 @@ MonoBehaviour:
     earningsPerSecond: 15.5
     World: 0
     Sprite: {fileID: -227418512, guid: cfa14f7d1a30f9048b1d489252bfd014, type: 3}
+  - Name: Logic Clock
+    currencyType: 0
+    earningsPerSecond: 20
+    World: 0
+    Sprite: {fileID: -2129214719, guid: cfa14f7d1a30f9048b1d489252bfd014, type: 3}
+  - Name: Register
+    currencyType: 0
+    earningsPerSecond: 35
+    World: 0
+    Sprite: {fileID: -833067984, guid: cfa14f7d1a30f9048b1d489252bfd014, type: 3}
+  - Name: Cache
+    currencyType: 0
+    earningsPerSecond: 50
+    World: 0
+    Sprite: {fileID: 1559777153, guid: cfa14f7d1a30f9048b1d489252bfd014, type: 3}
   evolution_ID: 0
 --- !u!114 &-6774893568432664858
 MonoBehaviour:

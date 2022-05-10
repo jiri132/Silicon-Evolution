@@ -229,6 +229,69 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: SiliconEvolutions_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31f9522dca5999a4cabb2dea61157061
+      internalID: -2129214719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SiliconEvolutions_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd9145e47e8000744bc9041cf827bfe7
+      internalID: -833067984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SiliconEvolutions_8
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed4cf97ae02fbf44abec0219b65fdfed
+      internalID: 1559777153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -242,8 +305,11 @@ TextureImporter:
     nameFileIdTable:
       SiliconEvolutions_3: 1964922932
       SiliconEvolutions_4: 1407017471
+      SiliconEvolutions_7: -833067984
       SiliconEvolutions_5: -227418512
       SiliconEvolutions_2: 1465479157
+      SiliconEvolutions_6: -2129214719
+      SiliconEvolutions_8: 1559777153
       SiliconEvolutions_1: 825387238
       SiliconEvolutions_0: 1567843307
   spritePackingTag: 
