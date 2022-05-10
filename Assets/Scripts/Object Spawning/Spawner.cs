@@ -6,8 +6,9 @@ public class Spawner : MonoBehaviour
 {
     [SerializeField] private Vector2 screenSize;
     [SerializeField] private Vector2 offset;
-    [SerializeField] private GameObject obj;
+    [SerializeField] private GameObject prefab;
 
+    //[SerializeField] private int maxObjects;
 
     //CHANGE THIS if you want a faster spawning
     public float waitingSeconds;
@@ -30,7 +31,7 @@ public class Spawner : MonoBehaviour
             Vector2 randomPos = new Vector2(Random.Range(min.x, max.x), Random.Range(min.y, max.y));
 
             //spawn the object
-            Instantiate(obj,randomPos, Quaternion.identity);
+            Instantiate(prefab,randomPos, Quaternion.identity);
 
             //wait for the total amount of seconds
             yield return new WaitForSecondsRealtime(waitingSeconds);
