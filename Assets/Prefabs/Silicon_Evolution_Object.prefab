@@ -146,6 +146,7 @@ MonoBehaviour:
     earningsPerSecond: 50
     World: 0
     Sprite: {fileID: 1559777153, guid: cfa14f7d1a30f9048b1d489252bfd014, type: 3}
+  spriteRenderer: {fileID: 0}
   evolution_ID: 0
 --- !u!114 &-6774893568432664858
 MonoBehaviour:
@@ -162,6 +163,9 @@ MonoBehaviour:
   manager: {fileID: 0}
   other: {fileID: 0}
   canCombine: 0
+  speed: 150
+  particles: {fileID: 300171699608563073, guid: 682b1612b33a8c9489b0837250dc97fe, type: 3}
+  evolutionPrefab: {fileID: 3483872869052774024}
 --- !u!61 &-3532397405725255131
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -186,7 +190,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.45, y: 0.45}
+  m_Size: {x: 0.8, y: 0.8}
   m_EdgeRadius: 0
 --- !u!50 &-3171381129038201883
 Rigidbody2D:
