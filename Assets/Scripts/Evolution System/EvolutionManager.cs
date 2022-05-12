@@ -8,6 +8,7 @@ public class EvolutionManager : MonoBehaviour
     private SpriteRenderer spriteRenderer;
 
     public int evolution_ID = 0;
+
     private void Start()
     {
         this.spriteRenderer = GetComponent<SpriteRenderer>();
