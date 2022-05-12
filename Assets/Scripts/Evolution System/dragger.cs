@@ -6,6 +6,9 @@ public class dragger : MonoBehaviour
 {
     [SerializeField]private EvolutionManager manager, other;
     [SerializeField]private bool canCombine;
+    [SerializeField] private float speed;
+    [SerializeField] private GameObject particles, evolutionPrefab;
+
     // Start is called before the first frame update
     private bool isDragging;
     private void Start()
@@ -21,6 +24,15 @@ public class dragger : MonoBehaviour
             
         }
     }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (canCombine)
+        {
+            //other = null;
+            canCombine = false;
+        }
+    }
     public void OnMouseDown()
     {
         isDragging = true;
@@ -30,10 +42,40 @@ public class dragger : MonoBehaviour
         isDragging = false;
         if (canCombine)
         {
-            manager.Combine();
-            Destroy(other.gameObject);
+            StartCoroutine( CombineAnimation());
             canCombine = false;
         }
+    }
+
+    IEnumerator CombineAnimation()
+    {
+        //variables needed
+        Vector3 pos1 = manager.gameObject.transform.position;
+        Vector3 pos2 = other.gameObject.transform.position;
+        Vector3 middlePos = pos1 + (pos1 - pos2);
+        int ID = manager.evolution_ID + 1;
+        //lerp them to the correct position
+        while (manager.gameObject.transform.position != middlePos && other.gameObject.transform.position != middlePos)
+        {
+            manager.gameObject.transform.position = Vector3.Lerp(pos1, middlePos, speed * Time.deltaTime);
+            other.gameObject.transform.position = Vector3.Lerp(pos2, middlePos, speed * Time.deltaTime);
+            new WaitForSeconds(0.1f);
+        }
+        //spawn particle
+        Instantiate(particles,middlePos,Quaternion.identity);
+        //set the object his data and spawn it
+        
+        Debug.Log(other);
+        //destroy the old objects
+        Destroy(manager.gameObject);
+        Destroy(other.gameObject);
+
+        GameObject a = Instantiate(evolutionPrefab, middlePos, Quaternion.identity);
+        EvolutionManager e = a.GetComponent<EvolutionManager>();
+        e.evolution_ID = ID;
+        e.SetImage();
+
+        yield return new WaitForSeconds(0.1f);
     }
 
     // Update is called once per frame

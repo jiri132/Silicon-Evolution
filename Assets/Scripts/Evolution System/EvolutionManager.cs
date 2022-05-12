@@ -5,7 +5,7 @@ using UnityEngine;
 public class EvolutionManager : MonoBehaviour
 {
     [SerializeField]private EvolutionStage[] evolutionStages;
-    private SpriteRenderer spriteRenderer;
+    [SerializeField]private SpriteRenderer spriteRenderer;
 
     public int evolution_ID = 0;
     private void Start()
