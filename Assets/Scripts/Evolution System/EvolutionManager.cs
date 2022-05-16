@@ -8,9 +8,20 @@ public class EvolutionManager : MonoBehaviour
     [SerializeField]private SpriteRenderer spriteRenderer;
 
     public int evolution_ID = 0;
+
+    private void Awake()
+    {
+        ContentManager.capacity++;
+    }
+
+    private void OnDestroy()
+    {
+        ContentManager.capacity--;
+    }
+
     private void Start()
     {
-        this.spriteRenderer = GetComponent<SpriteRenderer>();
+        //this.spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = evolutionStages[evolution_ID].Sprite;
     }
 
@@ -23,5 +34,24 @@ public class EvolutionManager : MonoBehaviour
     {
         evolution_ID++;
         SetImage();
+    }
+
+    public void Transfer()
+    {
+        switch (evolution_ID)
+        {
+            case 0:
+                currencyManager.dogecoinAmount += 1f;
+                break;
+            case 1:
+                currencyManager.dogecoinAmount += 2.5f;
+                break;
+            case 2:
+                currencyManager.dogecoinAmount += 3.25f;
+                break;
+            default:
+                Debug.Log("Something wrong ye");
+                break;
+        }
     }
 }
