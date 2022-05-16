@@ -40,14 +40,17 @@ public class EvolutionManager : MonoBehaviour
     {
         switch (evolution_ID)
         {
-            case 1:
+            case 0:
                 currencyManager.dogecoinAmount += 1f;
                 break;
-            case 2:
+            case 1:
                 currencyManager.dogecoinAmount += 2.5f;
                 break;
-            case 3:
+            case 2:
                 currencyManager.dogecoinAmount += 3.25f;
+                break;
+            default:
+                Debug.Log("Something wrong ye");
                 break;
         }
     }
