@@ -14,6 +14,8 @@ public class ContentManager : MonoBehaviour
     #region Prefab to spawn
     [Header("Needs the prefab of the evolution object filledi!")]
     public GameObject Prefab;
+    public static int capacity = 0;
+    public static int maxCapacity = 12;
     #endregion
 
     #region ALL FUNCTIONS

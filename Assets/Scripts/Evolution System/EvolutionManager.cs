@@ -9,6 +9,16 @@ public class EvolutionManager : MonoBehaviour
 
     public int evolution_ID = 0;
 
+    private void Awake()
+    {
+        ContentManager.capacity++;
+    }
+
+    private void OnDestroy()
+    {
+        ContentManager.capacity--;
+    }
+
     private void Start()
     {
         //this.spriteRenderer = GetComponent<SpriteRenderer>();
