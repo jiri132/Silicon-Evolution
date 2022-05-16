@@ -7,7 +7,7 @@ public class settings : MonoBehaviour
     public GameObject pase;
     public bool settings_en;
     // Start is called before the first frame update
-
+    public GameObject enable_set;
 
     //this is for the button
     public void sett_en_dis()
@@ -20,12 +20,18 @@ public class settings : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        settings_en = true;
+
+
+        if(settings_en == false)
+        {
+            enable_set.SetActive(false);
+            settings_en = true;
+        }
         if (settings_en == true)
         {
-            Instantiate(pase, new Vector3(0, 0, 0), Quaternion.identity);
-            settings_en = false;
-        }        
+            enable_set.SetActive(true);
+
+        }
     }
     // Update is called once per frame
     void Update()
