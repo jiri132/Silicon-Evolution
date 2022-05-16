@@ -12,5 +12,5 @@ public class currencyManager : MonoBehaviour
     public float etheriumAmount;
     public float bitcoinAmount;
 
-
+    // In de scene, zoek naar alle objecten en geef geld gebaseerd op de ID van ieder object, doe dit iedere seconde
 }
