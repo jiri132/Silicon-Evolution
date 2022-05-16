@@ -25,14 +25,17 @@ public class Spawner : MonoBehaviour
     {
         while(true)
         {
-            //allocte the space where it can spawn
-            Vector2 min = -screenSize + offset;
-            Vector2 max = screenSize - offset;
-            Vector2 randomPos = new Vector2(Random.Range(min.x, max.x), Random.Range(min.y, max.y));
+            if (ContentManager.capacity < ContentManager.maxCapacity)
+            {
+                //allocte the space where it can spawn
+                Vector2 min = -screenSize + offset;
+                Vector2 max = screenSize - offset;
+                Vector2 randomPos = new Vector2(Random.Range(min.x, max.x), Random.Range(min.y, max.y));
 
-            //spawn the object
-            Instantiate(prefab,randomPos, Quaternion.identity);
-
+                //spawn the object
+                Instantiate(prefab, randomPos, Quaternion.identity);
+                ContentManager.capacity++;
+            }
             //wait for the total amount of seconds
             yield return new WaitForSecondsRealtime(waitingSeconds);
         }

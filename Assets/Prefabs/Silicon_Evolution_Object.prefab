@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -3171381129038201883}
   m_Layer: 0
   m_Name: Silicon_Evolution_Object
-  m_TagString: Untagged
+  m_TagString: Currency
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -146,7 +146,7 @@ MonoBehaviour:
     earningsPerSecond: 50
     World: 0
     Sprite: {fileID: 1559777153, guid: cfa14f7d1a30f9048b1d489252bfd014, type: 3}
-  spriteRenderer: {fileID: 0}
+  spriteRenderer: {fileID: 3483872869052774026}
   evolution_ID: 0
 --- !u!114 &-6774893568432664858
 MonoBehaviour:
@@ -163,7 +163,7 @@ MonoBehaviour:
   manager: {fileID: 0}
   other: {fileID: 0}
   canCombine: 0
-  speed: 150
+  speed: 50
   particles: {fileID: 300171699608563073, guid: 682b1612b33a8c9489b0837250dc97fe, type: 3}
   evolutionPrefab: {fileID: 3483872869052774024}
 --- !u!61 &-3532397405725255131

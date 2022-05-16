@@ -14,6 +14,8 @@ public class ContentManager : MonoBehaviour
     #region Prefab to spawn
     [Header("Needs the prefab of the evolution object filledi!")]
     public GameObject Prefab;
+    public static int capacity = 0;
+    public static int maxCapacity = 12;
     #endregion
 
     #region ALL FUNCTIONS
@@ -43,6 +45,8 @@ public class ContentManager : MonoBehaviour
         //if there aren o objects the just return no computing needed
         if (evolution_totalObjects == 0) { return; }
 
+        capacity = evolution_totalObjects;
+
         //getti nthe ID and position then storing it in the psawn data function
         for (int i = 0; i < evolution_totalObjects; i++)
         {
@@ -57,6 +61,7 @@ public class ContentManager : MonoBehaviour
     private void SpawnTheData(int ID, float x ,float y, float z)
     {
         //spawning the object then setting all  the corrosponding data of images and ID
+        Debug.Log($"ID -> [{ID}], XYZ-> [ {x},{y},{z}]");
         GameObject spawned = Instantiate(Prefab,new Vector3(x,y,z),Quaternion.identity);
         EvolutionManager e_m = spawned.GetComponent<EvolutionManager>();
         e_m.evolution_ID = ID;
@@ -74,7 +79,9 @@ public class ContentManager : MonoBehaviour
         for (int i = 0; i < evolution_totalObjects; i++)
         {
             //ID
-            PlayerPrefs.SetInt($"evolution_ID-{i}",evolution_ID[i]);
+            evolution_ID[i] = evolutions_GameObjects[i].GetComponent<EvolutionManager>().evolution_ID;
+            PlayerPrefs.SetInt($"evolution_ID-{i}", evolution_ID[i]);
+            Debug.Log(evolution_ID[i].ToString());
 
             //Position
             PlayerPrefs.SetFloat($"evolution_GameObject_X-{i}",evolutions_GameObjects[i].transform.position.x);
@@ -96,6 +103,21 @@ public class ContentManager : MonoBehaviour
         }
         evolution_totalObjects = evolutions_GameObjects.Count;
     }
+    #endregion
+    #region CUSTOM DESTROY FUNCTION
+
+    public void DeleteData()
+    {
+        for (int i = 0; i < evolution_totalObjects; i++)
+        {
+            PlayerPrefs.DeleteKey($"evolution_ID-{i}");
+            PlayerPrefs.DeleteKey($"evolution_GameObject_X-{i}");
+            PlayerPrefs.DeleteKey($"evolution_GameObject_Y-{i}");
+            PlayerPrefs.DeleteKey($"evolution_GameObject_Z-{i}");
+        }
+        PlayerPrefs.DeleteKey("evolution_totalObjects");
+    }
+
     #endregion
     #endregion
 }
