@@ -67,6 +67,7 @@ public class dragger : MonoBehaviour
         
         Debug.Log(other);
 
+        //spawning and setting the correct ID
         GameObject a = Instantiate(evolutionPrefab, middlePos, Quaternion.identity);
         EvolutionManager e = a.GetComponent<EvolutionManager>();
         e.evolution_ID = ID;
