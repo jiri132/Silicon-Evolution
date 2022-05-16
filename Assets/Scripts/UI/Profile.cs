@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 
-public class Profile : MonoBehaviour
+/*public class Profile : MonoBehaviour
 {
 	#region Singlton:Profile
 
@@ -88,4 +88,4 @@ public class Profile : MonoBehaviour
 		//Change Avatar
 		CurrentAvatar.sprite = AvatarsList[newSelectedIndex].Image;
 	}
-}
+}*/

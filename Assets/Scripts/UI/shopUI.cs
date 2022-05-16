@@ -29,9 +29,9 @@ public class shopUI : MonoBehaviour
             g = Instantiate(ItemTemplate, ShopscrollView);
             g.transform.GetChild(0).GetComponent<Image>().sprite = ShopItemList[i].Image;
             g.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<Text>().text = ShopItemList[i].Price.ToString();
-            buyBtn = g.transform.GetChild(2).GetComponent <Button> ();
+/*            buyBtn = g.transform.GetChild(2).GetComponent <Button> ();
             buyBtn.interactable =!ShopItemList [i].IsPurchased;;
-            buyBtn.AddEventListener(i, OnShopItemBtnClicked);
+            buyBtn.AddEventListener(i, OnShopItemBtnClicked);*/
         }
         Destroy(ItemTemplate);
     }

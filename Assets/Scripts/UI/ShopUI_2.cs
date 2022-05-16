@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 
-public class ShopUI_2 : MonoBehaviour
+/*public class ShopUI_2 : MonoBehaviour
 {
 	#region Singlton:Shop
 
@@ -82,7 +82,7 @@ public class ShopUI_2 : MonoBehaviour
 		buyBtn.interactable = false;
 		buyBtn.transform.GetChild(0).GetComponent<Text>().text = "PURCHASED";
 	}
-	/*---------------------Open & Close shop--------------------------*/
+	*//*---------------------Open & Close shop--------------------------*//*
 	public void OpenShop()
 	{
 		ShopPanel.SetActive(true);
@@ -93,4 +93,4 @@ public class ShopUI_2 : MonoBehaviour
 		ShopPanel.SetActive(false);
 	}
 
-}
+}*/
