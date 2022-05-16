@@ -57,6 +57,7 @@ public class ContentManager : MonoBehaviour
     private void SpawnTheData(int ID, float x ,float y, float z)
     {
         //spawning the object then setting all  the corrosponding data of images and ID
+        Debug.Log($"ID -> [{ID}], XYZ-> [ {x},{y},{z}]");
         GameObject spawned = Instantiate(Prefab,new Vector3(x,y,z),Quaternion.identity);
         EvolutionManager e_m = spawned.GetComponent<EvolutionManager>();
         e_m.evolution_ID = ID;
@@ -74,7 +75,9 @@ public class ContentManager : MonoBehaviour
         for (int i = 0; i < evolution_totalObjects; i++)
         {
             //ID
-            PlayerPrefs.SetInt($"evolution_ID-{i}",evolution_ID[i]);
+            evolution_ID[i] = evolutions_GameObjects[i].GetComponent<EvolutionManager>().evolution_ID;
+            PlayerPrefs.SetInt($"evolution_ID-{i}", evolution_ID[i]);
+            Debug.Log(evolution_ID[i].ToString());
 
             //Position
             PlayerPrefs.SetFloat($"evolution_GameObject_X-{i}",evolutions_GameObjects[i].transform.position.x);
@@ -96,6 +99,21 @@ public class ContentManager : MonoBehaviour
         }
         evolution_totalObjects = evolutions_GameObjects.Count;
     }
+    #endregion
+    #region CUSTOM DESTROY FUNCTION
+
+    public void DeleteData()
+    {
+        for (int i = 0; i < evolution_totalObjects; i++)
+        {
+            PlayerPrefs.DeleteKey($"evolution_ID-{i}");
+            PlayerPrefs.DeleteKey($"evolution_GameObject_X-{i}");
+            PlayerPrefs.DeleteKey($"evolution_GameObject_Y-{i}");
+            PlayerPrefs.DeleteKey($"evolution_GameObject_Z-{i}");
+        }
+        PlayerPrefs.DeleteKey("evolution_totalObjects");
+    }
+
     #endregion
     #endregion
 }
