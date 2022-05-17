@@ -45,6 +45,8 @@ public class ContentManager : MonoBehaviour
         //if there aren o objects the just return no computing needed
         if (evolution_totalObjects == 0) { return; }
 
+        capacity = evolution_totalObjects;
+
         //getti nthe ID and position then storing it in the psawn data function
         for (int i = 0; i < evolution_totalObjects; i++)
         {

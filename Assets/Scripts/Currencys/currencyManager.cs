@@ -16,15 +16,20 @@ public class currencyManager : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(Checker());
+        // StartCoroutine(Checker());
+    }
+
+    private void Update()
+    {
+        currency.text = "Dogecoin: " + Mathf.Round(dogecoinAmount);
     }
 
     // In de scene, zoek naar alle objecten en geef geld gebaseerd op de ID van ieder object, doe dit iedere seconde
+    /*
     IEnumerator Checker()
     {
         while(loop == true)
         {
-            currency.text = "Dogecoin: " + dogecoinAmount;
             yield return new WaitForSeconds(1f);
             GameObject[] currencyGivers = GameObject.FindGameObjectsWithTag("Currency");
 
@@ -36,4 +41,5 @@ public class currencyManager : MonoBehaviour
             }
         }
     }
+    */
 }
