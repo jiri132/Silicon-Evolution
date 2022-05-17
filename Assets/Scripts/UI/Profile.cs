@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 
-/*public class Profile : MonoBehaviour
+public class Profile : MonoBehaviour
 {
 	#region Singlton:Profile
 
@@ -44,12 +44,12 @@ using System.Collections.Generic;
 
 	void GetAvailableAvatars()
 	{
-		for (int i = 0; i < Shop.Instance.ShopItemsList.Count; i++)
+		for (int i = 0; i < ShopUI_2.Instance.ShopItemsList.Count; i++)
 		{
-			if (Shop.Instance.ShopItemsList[i].IsPurchased)
+			if (ShopUI_2.Instance.ShopItemsList[i].IsPurchased)
 			{
 				//add all purchased avatars to AvatarsList
-				AddAvatar(Shop.Instance.ShopItemsList[i].Image);
+				AddAvatar(ShopUI_2.Instance.ShopItemsList[i].Image);
 			}
 		}
 
@@ -88,4 +88,4 @@ using System.Collections.Generic;
 		//Change Avatar
 		CurrentAvatar.sprite = AvatarsList[newSelectedIndex].Image;
 	}
-}*/
+}

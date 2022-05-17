@@ -2,11 +2,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 
-/*public class ShopUI_2 : MonoBehaviour
+public class ShopUI_2 : MonoBehaviour
 {
 	#region Singlton:Shop
 
-	public static Shop Instance;
+	public static ShopUI_2 Instance;
 
 	void Awake()
 	{
@@ -43,7 +43,7 @@ using System.Collections.Generic;
 		{
 			g = Instantiate(ItemTemplate, ShopScrollView);
 			g.transform.GetChild(0).GetComponent<Image>().sprite = ShopItemsList[i].Image;
-			g.transform.GetChild(1).GetChild(0).GetComponent<Text>().text = ShopItemsList[i].Price.ToString();
+			g.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<Text>().text = ShopItemsList[i].Price.ToString();
 			buyBtn = g.transform.GetChild(2).GetComponent<Button>();
 			if (ShopItemsList[i].IsPurchased)
 			{
@@ -82,7 +82,7 @@ using System.Collections.Generic;
 		buyBtn.interactable = false;
 		buyBtn.transform.GetChild(0).GetComponent<Text>().text = "PURCHASED";
 	}
-	*//*---------------------Open & Close shop--------------------------*//*
+	//*---------------------Open & Close shop--------------------------*//*
 	public void OpenShop()
 	{
 		ShopPanel.SetActive(true);
@@ -93,4 +93,4 @@ using System.Collections.Generic;
 		ShopPanel.SetActive(false);
 	}
 
-}*/
+}

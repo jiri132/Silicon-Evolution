@@ -279,6 +279,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 2
+--- !u!1 &142796835
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 142796837}
+  - component: {fileID: 142796838}
+  m_Layer: 0
+  m_Name: _Game
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &142796837
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142796835}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.2960695, y: 2.3953211, z: 295.93533}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &142796838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142796835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d394ff9c991a3064bbaa1e906db87706, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allCoinsUIText: []
+  Coins: 1000
 --- !u!1 &364083957
 GameObject:
   m_ObjectHideFlags: 0
@@ -700,7 +746,7 @@ MonoBehaviour:
   - Image: {fileID: -833067984, guid: cfa14f7d1a30f9048b1d489252bfd014, type: 3}
     Price: 16000
     IsPurchased: 0
-  - Image: {fileID: -833067984, guid: cfa14f7d1a30f9048b1d489252bfd014, type: 3}
+  - Image: {fileID: 1559777153, guid: cfa14f7d1a30f9048b1d489252bfd014, type: 3}
     Price: 16000
     IsPurchased: 0
   ItemTemplate: {fileID: 6184591257080130439, guid: 09bbf24ef1f62b84da8563a6f36e601c, type: 3}
@@ -902,8 +948,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 105.3, y: 221.3}
-  m_SizeDelta: {x: 64.53, y: 57.51}
+  m_AnchoredPosition: {x: 111.5, y: 224.1}
+  m_SizeDelta: {x: 38.33, y: 38.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1824669575
 MonoBehaviour:
