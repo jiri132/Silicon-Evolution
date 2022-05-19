@@ -18,18 +18,35 @@ public class shopUI : MonoBehaviour
     GameObject g;
     [SerializeField] Transform ShopscrollView;
     Button buyBtn;
-
+    int heigestId=0;
+    [SerializeField]int visiblenum =1;
      void Start()
     {
+
+
         ItemTemplate = ShopscrollView.GetChild(0).gameObject;
 
         int len = ShopItemList.Count;
-        for(int i = 0; i < len; i++)
+        EvolutionManager[] obj = GameObject.FindObjectsOfType<EvolutionManager>();
+
+        for (int j = 0; j < obj.Length; j++)
         {
+            if (heigestId < obj[j].evolution_ID)
+            {
+                heigestId = obj[j].evolution_ID;
+                visiblenum = heigestId - 5;
+                if (visiblenum < 0) { visiblenum = 2; }
+            }
+        }
+
+        for (int i = 0; i < visiblenum; i++)
+        {
+            
+
             g = Instantiate(ItemTemplate, ShopscrollView);
             g.transform.GetChild(0).GetComponent<Image>().sprite = ShopItemList[i].Image;
             g.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<Text>().text = ShopItemList[i].Price.ToString();
-/*            buyBtn = g.transform.GetChild(2).GetComponent <Button> ();
+          /*buyBtn = g.transform.GetChild(2).GetComponent <Button> ();
             buyBtn.interactable =!ShopItemList [i].IsPurchased;;
             buyBtn.AddEventListener(i, OnShopItemBtnClicked);*/
         }
@@ -45,4 +62,5 @@ public class shopUI : MonoBehaviour
             Debug.Log("You don't have enough!!");
         }
     }
+    
 }
