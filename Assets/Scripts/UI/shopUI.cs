@@ -29,6 +29,8 @@ public class shopUI : MonoBehaviour
         int len = ShopItemList.Count;
         EvolutionManager[] obj = GameObject.FindObjectsOfType<EvolutionManager>();
 
+
+        //check if the evolution_ID is bigger then 5
         for (int j = 0; j < obj.Length; j++)
         {
             if (heigestId < obj[j].evolution_ID)
