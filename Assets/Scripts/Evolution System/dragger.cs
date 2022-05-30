@@ -5,7 +5,7 @@ using UnityEngine;
 public class dragger : MonoBehaviour
 {
     [SerializeField]private EvolutionManager manager, other;
-    [SerializeField]private bool canCombine;
+    [SerializeField] private bool canCombine, animated;
     [SerializeField] private float speed;
     [SerializeField] private GameObject particles, evolutionPrefab;
 
@@ -42,11 +42,37 @@ public class dragger : MonoBehaviour
         isDragging = false;
         if (canCombine)
         {
-            StartCoroutine( CombineAnimation());
+            if (animated) { StartCoroutine(CombineAnimation()); }
+            else { Combine();  }
+
+            AudioManager.PlaySFX(AudioManager.sfxC[0].clip);
+
             canCombine = false;
         }
     }
+    void Combine()
+    {
+        Vector3 pos1 = manager.gameObject.transform.position;
+        Vector3 pos2 = other.gameObject.transform.position;
+        Vector3 middlePos = pos1 + (pos1 - pos2);
+        int ID = manager.evolution_ID + 1;
 
+        //spawn particle
+        Instantiate(particles, middlePos, Quaternion.identity);
+        //set the object his data and spawn it
+
+        Debug.Log(other);
+
+        //spawning and setting the correct ID
+        GameObject a = Instantiate(evolutionPrefab, middlePos, Quaternion.identity);
+        EvolutionManager e = a.GetComponent<EvolutionManager>();
+        e.evolution_ID = ID;
+        e.SetImage();
+
+        //destroy the old objects
+        Destroy(manager.gameObject);
+        Destroy(other.gameObject);
+    }
     IEnumerator CombineAnimation()
     {
         //variables needed

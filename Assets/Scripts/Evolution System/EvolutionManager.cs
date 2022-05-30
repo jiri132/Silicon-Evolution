@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class EvolutionManager : MonoBehaviour
 {
     [SerializeField]private EvolutionStage[] evolutionStages;
     [SerializeField]private SpriteRenderer spriteRenderer;
+    [SerializeField]private GameObject EarningAnimation;
+    Text earnings;
 
     public int evolution_ID = 0;
 
@@ -13,12 +15,16 @@ public class EvolutionManager : MonoBehaviour
 
     private void Awake()
     {
+        earnings = EarningAnimation.GetComponentInChildren<Text>();
+
         ContentManager.capacity++;
+        ContentManager.Instance._updateCap();
     }
 
     private void OnDestroy()
     {
         ContentManager.capacity--;
+        ContentManager.Instance._updateCap();
     }
 
     private void Start()
@@ -61,6 +67,7 @@ public class EvolutionManager : MonoBehaviour
         }
     }
     */
+    
 
     IEnumerator Money()
     {
@@ -68,6 +75,29 @@ public class EvolutionManager : MonoBehaviour
         {
             yield return new WaitForSeconds(1f);
 
+            EvolutionStage stage = evolutionStages[evolution_ID];
+
+            switch (stage.currencyType)
+            {
+                case CURRENCY_TYPES.DOGECOIN:
+                    AddCash(stage, currencyManager.dogecoinAmount);
+                    earnings.text = "+" + stage.earningsPerSecond;
+                    Instantiate(EarningAnimation,this.transform);
+                    break;
+                case CURRENCY_TYPES.CARDANO:
+                    AddCash(stage, currencyManager.cardanoAmount);
+                    break;
+                case CURRENCY_TYPES.ETHEREUM:
+                    AddCash(stage, currencyManager.etheriumAmount);
+                    break;
+                case CURRENCY_TYPES.BITCOIN:
+                    AddCash(stage, currencyManager.bitcoinAmount);
+                    break;
+                default:
+                    break;
+            }
+
+            /*
             switch (evolution_ID)
             {
                 case 0:
@@ -102,6 +132,12 @@ public class EvolutionManager : MonoBehaviour
                     Debug.Log("Something wrong ye");
                     break;
             }
+            */
         }
+    }
+
+    void AddCash(EvolutionStage s, float coin)
+    {
+        coin += s.earningsPerSecond;
     }
 }

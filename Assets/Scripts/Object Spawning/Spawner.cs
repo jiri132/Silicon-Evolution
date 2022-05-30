@@ -34,7 +34,7 @@ public class Spawner : MonoBehaviour
 
                 //spawn the object
                 Instantiate(prefab, randomPos, Quaternion.identity);
-                ContentManager.capacity++;
+                //ContentManager.capacity++;
             }
             //wait for the total amount of seconds
             yield return new WaitForSecondsRealtime(waitingSeconds);
