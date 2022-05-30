@@ -44,7 +44,7 @@ public class AudioManager : MonoBehaviour
     [Header("Sources")]
     [SerializeField] AudioSource musicSource, sfxSource;
     private static AudioSource sfxS;
-    private static Clips[] sfxC;
+    public static Clips[] sfxC;
 
     void Start()
     {
