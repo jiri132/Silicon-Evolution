@@ -8,6 +8,7 @@ public class EvolutionManager : MonoBehaviour
     [SerializeField]private SpriteRenderer spriteRenderer;
 
     public int evolution_ID = 0;
+    private CURRENCY_TYPES currencyType = CURRENCY_TYPES.DOGECOIN;
 
     private bool loop = true;
 
@@ -68,39 +69,42 @@ public class EvolutionManager : MonoBehaviour
         {
             yield return new WaitForSeconds(1f);
 
-            switch (evolution_ID)
+            if (currencyType == CURRENCY_TYPES.DOGECOIN)
             {
-                case 0:
-                    currencyManager.dogecoinAmount += 1f;
-                    break;
-                case 1:
-                    currencyManager.dogecoinAmount += 2.5f;
-                    break;
-                case 2:
-                    currencyManager.dogecoinAmount += 3.25f;
-                    break;
-                case 3:
-                    currencyManager.dogecoinAmount += 5f;
-                    break;
-                case 4:
-                    currencyManager.dogecoinAmount += 9f;
-                    break;
-                case 5:
-                    currencyManager.dogecoinAmount += 15.5f;
-                    break;
-                case 6:
-                    currencyManager.dogecoinAmount += 20f;
-                    break;
-                case 7:
-                    currencyManager.dogecoinAmount += 35f;
-                    break;
-                case 8:
-                    currencyManager.dogecoinAmount += 50f;
-                    break;
+                switch (evolution_ID)
+                {
+                    case 0:
+                        currencyManager.dogecoinAmount += 1f;
+                        break;
+                    case 1:
+                        currencyManager.dogecoinAmount += 2.5f;
+                        break;
+                    case 2:
+                        currencyManager.dogecoinAmount += 3.25f;
+                        break;
+                    case 3:
+                        currencyManager.dogecoinAmount += 5f;
+                        break;
+                    case 4:
+                        currencyManager.dogecoinAmount += 9f;
+                        break;
+                    case 5:
+                        currencyManager.dogecoinAmount += 15.5f;
+                        break;
+                    case 6:
+                        currencyManager.dogecoinAmount += 20f;
+                        break;
+                    case 7:
+                        currencyManager.dogecoinAmount += 35f;
+                        break;
+                    case 8:
+                        currencyManager.dogecoinAmount += 50f;
+                        break;
 
-                default:
-                    Debug.Log("Something wrong ye");
-                    break;
+                    default:
+                        Debug.Log("Something wrong ye");
+                        break;
+                }
             }
         }
     }
