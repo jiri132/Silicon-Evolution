@@ -78,8 +78,7 @@ public class CalculateHours : MonoBehaviour
                 PlayerPrefs.SetInt("minutes", minutes);
 
                 break;
-            default:
-                break;
+
         }
     }
 

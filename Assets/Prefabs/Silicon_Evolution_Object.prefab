@@ -147,6 +147,7 @@ MonoBehaviour:
     World: 0
     Sprite: {fileID: 1559777153, guid: cfa14f7d1a30f9048b1d489252bfd014, type: 3}
   spriteRenderer: {fileID: 3483872869052774026}
+  EarningAnimation: {fileID: 7335290774775582370, guid: f5053e818659beb4a88725db2d77f20c, type: 3}
   evolution_ID: 0
 --- !u!114 &-6774893568432664858
 MonoBehaviour:
@@ -163,6 +164,7 @@ MonoBehaviour:
   manager: {fileID: 0}
   other: {fileID: 0}
   canCombine: 0
+  animated: 0
   speed: 50
   particles: {fileID: 300171699608563073, guid: 682b1612b33a8c9489b0837250dc97fe, type: 3}
   evolutionPrefab: {fileID: 3483872869052774024}

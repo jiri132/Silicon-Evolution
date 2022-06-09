@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ContentManager : MonoBehaviour
 {
+
+    public static ContentManager Instance;
+
     #region THE DATA
     [Header("DEBUG REASONS ONLY")]
     [SerializeField]private List<GameObject> evolutions_GameObjects;
@@ -14,14 +17,33 @@ public class ContentManager : MonoBehaviour
     #region Prefab to spawn
     [Header("Needs the prefab of the evolution object filledi!")]
     public GameObject Prefab;
-    public static int capacity = 0;
-    public static int maxCapacity = 12;
+    [SerializeField]public static int capacity = 0;
+    [SerializeField]public static int maxCapacity = 12;
+    [SerializeField] int _capacity;
+    [SerializeField] int _maxCapacity;
     #endregion
 
     #region ALL FUNCTIONS
     #region SAVE LOAD FUNCTION
+
+    private void Start()
+    {
+        capacity = evolution_totalObjects;
+        _capacity = capacity;
+        _maxCapacity = maxCapacity;
+        
+    }
+
+    public void _updateCap()
+    {
+        _capacity = capacity;
+        _maxCapacity = maxCapacity;
+    }
+    
     private void Awake()
     {
+        Instance = this;
+
         //get all the stored daat back on screen
         LoadWithPlayerPrefs();
         
