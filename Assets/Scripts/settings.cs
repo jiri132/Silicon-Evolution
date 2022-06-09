@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class settings : MonoBehaviour
 {
-    public GameObject pase;
     public bool settings_en;
     // Start is called before the first frame update
     public GameObject enable_set;
