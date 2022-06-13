@@ -8,30 +8,23 @@ public class dragger : MonoBehaviour
     [SerializeField] private bool canCombine, animated;
     [SerializeField] private float speed;
     [SerializeField] private GameObject particles, evolutionPrefab;
+    public List<GameObject> touchingObjects = new List<GameObject>();
 
     // Start is called before the first frame update
     private bool isDragging;
+
     private void Start()
     {
         manager = GetComponent<EvolutionManager>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        other = collision.GetComponent<EvolutionManager>();
-      if ( other.evolution_ID == manager.evolution_ID)
-        {
-            canCombine = true;
-            
-        }
+        touchingObjects.Add(collision.gameObject);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (canCombine)
-        {
-            //other = null;
-            canCombine = false;
-        }
+        touchingObjects.Remove(collision.gameObject);
     }
     public void OnMouseDown()
     {
@@ -39,15 +32,26 @@ public class dragger : MonoBehaviour
     }
     public void OnMouseUp()
     {
-        isDragging = false;
-        if (canCombine)
+        if (gameObject != null)
         {
-            if (animated) { StartCoroutine(CombineAnimation()); }
-            else { Combine();  }
+            isDragging = false;
+            foreach (GameObject obj in touchingObjects)
+            {
+                other = obj.GetComponent<EvolutionManager>();
 
-            AudioManager.PlaySFX(AudioManager.sfxC[0].clip);
+                if (other.evolution_ID == manager.evolution_ID)
+                {
+                    touchingObjects.Clear();
+                    if (animated) { StartCoroutine(CombineAnimation()); }
+                    else { Combine(); }
 
-            canCombine = false;
+                    AudioManager.PlaySFX(AudioManager.sfxC[0].clip);
+
+                    canCombine = false;
+                    break;
+                }
+
+            }
         }
     }
     void Combine()
