@@ -7,7 +7,6 @@ using UnityEngine;
 public class currencyManager : MonoBehaviour
 {
     public TMPro.TextMeshProUGUI currency;
-    public static float usdAmount;
     public static float dogecoinAmount;
     public static float cardanoAmount;
     public static float etheriumAmount;
@@ -22,6 +21,19 @@ public class currencyManager : MonoBehaviour
     private void Update()
     {
         currency.text = "Dogecoin: " + Mathf.Round(dogecoinAmount);
+
+        if (cardanoAmount != 0)
+        {
+            currency.text += "\n" + "Cardano: " + Mathf.Round(cardanoAmount);
+        }
+        if (etheriumAmount != 0)
+        {
+            currency.text += "\n" + "Etherium: " + Mathf.Round(etheriumAmount);
+        }
+        if (bitcoinAmount != 0)
+        {
+            currency.text += "\n" + "Bitcoin: " + Mathf.Round(bitcoinAmount);
+        }
     }
 
     // In de scene, zoek naar alle objecten en geef geld gebaseerd op de ID van ieder object, doe dit iedere seconde
