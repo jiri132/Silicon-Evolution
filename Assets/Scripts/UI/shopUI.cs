@@ -26,7 +26,7 @@ public class shopUI : MonoBehaviour
 
         ItemTemplate = ShopscrollView.GetChild(0).gameObject;
 
-        int len = ShopItemList.Count;
+        int Length = ShopItemList.Count;
         EvolutionManager[] obj = GameObject.FindObjectsOfType<EvolutionManager>();
 
 
@@ -45,12 +45,13 @@ public class shopUI : MonoBehaviour
         {
             
 
-            g = Instantiate(ItemTemplate, ShopscrollView);
-            g.transform.GetChild(0).GetComponent<Image>().sprite = ShopItemList[i].Image;
-            g.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<Text>().text = ShopItemList[i].Price.ToString();
-          /*buyBtn = g.transform.GetChild(2).GetComponent <Button> ();
-            buyBtn.interactable =!ShopItemList [i].IsPurchased;;
-            buyBtn.AddEventListener(i, OnShopItemBtnClicked);*/
+           g = Instantiate(ItemTemplate, ShopscrollView);
+           g.transform.GetChild(0).GetComponent<Image>().sprite = ShopItemList[i].Image;
+           g.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<Text>().text = ShopItemList[i].Price.ToString();
+/*          buyBtn = g.transform.GetChild(2).GetComponent <Button> ();
+            Debug.Log("BUY");
+          buyBtn.interactable =!ShopItemList [i].IsPurchased;;
+          buyBtn.AddEventListener(i, OnShopItemBtnClicked);*/
         }
         Destroy(ItemTemplate);
     }

@@ -43,10 +43,10 @@ public class Game : MonoBehaviour
 
 	public void UpdateAllCoinsUIText()
 	{
-		for (int i = 0; i < allCoinsUIText.Length; i++)
+/*		for (int i = 0; i < allCoinsUIText.Length; i++)
 		{
 			allCoinsUIText[i].text = Coins.ToString();
-		}
+		}*/
 	}
 
 }

@@ -323,7 +323,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d394ff9c991a3064bbaa1e906db87706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allCoinsUIText: []
+  allCoinsUIText:
+  - {fileID: 0}
   Coins: 1000
 --- !u!1 &364083957
 GameObject:
@@ -751,6 +752,7 @@ MonoBehaviour:
     IsPurchased: 0
   ItemTemplate: {fileID: 6184591257080130439, guid: 09bbf24ef1f62b84da8563a6f36e601c, type: 3}
   ShopscrollView: {fileID: 32995091}
+  visiblenum: 1
 --- !u!1 &1270739979
 GameObject:
   m_ObjectHideFlags: 0
