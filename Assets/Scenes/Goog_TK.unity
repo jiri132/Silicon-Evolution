@@ -898,6 +898,8 @@ MonoBehaviour:
   evolution_ID: 
   evolution_totalObjects: 0
   Prefab: {fileID: 3483872869052774024, guid: c8f431c3e5fbbc844ac4920943c70220, type: 3}
+  _capacity: 0
+  _maxCapacity: 0
 --- !u!4 &1075709389
 Transform:
   m_ObjectHideFlags: 0
@@ -1719,7 +1721,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1435753900
 Transform:
   m_ObjectHideFlags: 0
